@@ -16,5 +16,15 @@ namespace Exemplo00
         {
             InitializeComponent();
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            Carro carro = new Carro();
+
+            carro.Modelo = txtModelo.Text;
+            carro.Ano = Convert.ToInt32(nudAno.Value);
+            carro.Preco = Convert.ToDecimal(mtbPreco.Text);
+            carro.Cor = cbCor.SelectedItem.ToString();
+        }
     }
 }
