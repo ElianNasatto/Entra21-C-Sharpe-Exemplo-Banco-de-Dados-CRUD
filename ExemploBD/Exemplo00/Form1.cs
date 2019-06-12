@@ -181,7 +181,7 @@ namespace Exemplo00
                 return;
             }
 
-            DialogResult result = MessageBox.Show("Deseja apagar?", "Aviso ", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Deseja apagar?", "Aviso ", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
                 SqlConnection conexao = new SqlConnection();
@@ -262,50 +262,63 @@ namespace Exemplo00
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\MeusCarros.mdf;Integrated Security=True;Connect Timeout=30";
-
-            SqlCommand comando = new SqlCommand();
-            comando.Connection = conexao;
-
-            conexao.Open();
-
-            comando.CommandText = "UPDATE carro SET modelo = @MODELO, cor = @COR, preco = @PRECO, ano = @ANO WHERE id = @ID";
-
-            Carro carro = new Carro();
-            carro.Id     = idAtualizar;
-            carro.Modelo = txtModelo.Text;
-            carro.Cor    = cbCor.SelectedItem.ToString();
-            string preco = mtbPreco.Text;
-            preco        = preco.Replace('R',' ');
-            preco        = preco.Replace('$', ' ');
-            carro.Preco  = Convert.ToDecimal(preco);
-            carro.Ano    = Convert.ToInt32(nudAno.Value);
-
-            comando.Parameters.AddWithValue("@ID",carro.Id);
-            comando.Parameters.AddWithValue("@MODELO",carro.Modelo);
-            comando.Parameters.AddWithValue("@COR", carro.Cor);
-            comando.Parameters.AddWithValue("@PRECO", carro.Preco);
-            comando.Parameters.AddWithValue("@ANO", carro.Ano);
-
-            try
+            DialogResult result = MessageBox.Show("Deseja alterar?", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (result == DialogResult.Cancel)
             {
-                comando.ExecuteNonQuery();
-                conexao.Close();
-                btnAtualizar.Visible = false;
-                btnSalvar.Visible = true;
-                LimpaCampos();
-                AtualizarTabela();
-                MessageBox.Show("Atualizado o registro " + idAtualizar + " com sucesso");
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Não foi possivel alterar");
-                MessageBox.Show(erro.ToString());
                 btnAtualizar.Visible = false;
                 btnSalvar.Visible = true;
                 LimpaCampos();
                 return;
+            }
+            else
+            {
+
+
+                SqlConnection conexao = new SqlConnection();
+                conexao.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\MeusCarros.mdf;Integrated Security=True;Connect Timeout=30";
+
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexao;
+
+                conexao.Open();
+
+                comando.CommandText = "UPDATE carro SET modelo = @MODELO, cor = @COR, preco = @PRECO, ano = @ANO WHERE id = @ID";
+
+                Carro carro = new Carro();
+                carro.Id = idAtualizar;
+                carro.Modelo = txtModelo.Text;
+                carro.Cor = cbCor.SelectedItem.ToString();
+                string preco = mtbPreco.Text;
+                preco = preco.Replace('R', ' ');
+                preco = preco.Replace('$', ' ');
+                carro.Preco = Convert.ToDecimal(preco);
+                carro.Ano = Convert.ToInt32(nudAno.Value);
+
+                comando.Parameters.AddWithValue("@ID", carro.Id);
+                comando.Parameters.AddWithValue("@MODELO", carro.Modelo);
+                comando.Parameters.AddWithValue("@COR", carro.Cor);
+                comando.Parameters.AddWithValue("@PRECO", carro.Preco);
+                comando.Parameters.AddWithValue("@ANO", carro.Ano);
+
+                try
+                {
+                    comando.ExecuteNonQuery();
+                    conexao.Close();
+                    btnAtualizar.Visible = false;
+                    btnSalvar.Visible = true;
+                    LimpaCampos();
+                    AtualizarTabela();
+                    MessageBox.Show("Atualizado o registro " + idAtualizar + " com sucesso");
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Não foi possivel alterar");
+                    MessageBox.Show(erro.ToString());
+                    btnAtualizar.Visible = false;
+                    btnSalvar.Visible = true;
+                    LimpaCampos();
+                    return;
+                }
             }
 
 
