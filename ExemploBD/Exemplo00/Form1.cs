@@ -271,16 +271,22 @@ namespace Exemplo00
             conexao.Open();
 
             comando.CommandText = "UPDATE carro SET modelo = @MODELO, cor = @COR, preco = @PRECO, ano = @ANO WHERE id = @ID";
-            comando.Parameters.AddWithValue("@ID", idAtualizar);
-            comando.Parameters.AddWithValue("@MODELO", txtModelo.Text);
-            comando.Parameters.AddWithValue("@COR", cbCor.SelectedItem.ToString());
+
+            Carro carro = new Carro();
+            carro.Id     = idAtualizar;
+            carro.Modelo = txtModelo.Text;
+            carro.Cor    = cbCor.SelectedItem.ToString();
             string preco = mtbPreco.Text;
-            preco = preco.Replace('R',' ');
-            preco = preco.Replace('$', ' ');
+            preco        = preco.Replace('R',' ');
+            preco        = preco.Replace('$', ' ');
+            carro.Preco  = Convert.ToDecimal(preco);
+            carro.Ano    = Convert.ToInt32(nudAno.Value);
 
-            comando.Parameters.AddWithValue("@PRECO", preco);
-
-            comando.Parameters.AddWithValue("@ANO", nudAno.Value);
+            comando.Parameters.AddWithValue("@ID",carro.Id);
+            comando.Parameters.AddWithValue("@MODELO",carro.Modelo);
+            comando.Parameters.AddWithValue("@COR", carro.Cor);
+            comando.Parameters.AddWithValue("@PRECO", carro.Preco);
+            comando.Parameters.AddWithValue("@ANO", carro.Ano);
 
             try
             {

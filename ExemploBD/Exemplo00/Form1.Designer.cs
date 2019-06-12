@@ -38,12 +38,12 @@
             this.mtbPreco = new System.Windows.Forms.MaskedTextBox();
             this.nudAno = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -169,16 +169,6 @@
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseDoubleClick);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(295, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 24);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Lista de Cadastrados";
-            // 
             // ColumnId
             // 
             this.ColumnId.HeaderText = "Código";
@@ -209,6 +199,16 @@
             this.ColumnAno.Name = "ColumnAno";
             this.ColumnAno.ReadOnly = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(295, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(183, 24);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Lista de Cadastrados";
+            // 
             // btnAtualizar
             // 
             this.btnAtualizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
@@ -231,9 +231,9 @@
             this.btnDelete.FlatAppearance.BorderSize = 5;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::Exemplo00.Properties.Resources._1486564399_close_815121;
-            this.btnDelete.Location = new System.Drawing.Point(705, 316);
+            this.btnDelete.Location = new System.Drawing.Point(723, 316);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(147, 53);
+            this.btnDelete.Size = new System.Drawing.Size(129, 53);
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
