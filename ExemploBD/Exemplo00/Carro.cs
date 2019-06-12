@@ -8,6 +8,7 @@ namespace Exemplo00
 {
     class Carro
     {
+        public int Id;
         public string Cor;
         public string Modelo;
         public decimal Preco;

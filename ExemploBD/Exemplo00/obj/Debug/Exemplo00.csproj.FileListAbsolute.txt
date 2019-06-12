@@ -1,0 +1,10 @@
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\bin\Debug\Exemplo00.exe.config
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\bin\Debug\Exemplo00.exe
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\bin\Debug\Exemplo00.pdb
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\obj\Debug\Exemplo00.csprojAssemblyReference.cache
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\obj\Debug\Exemplo00.Form1.resources
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\obj\Debug\Exemplo00.Properties.Resources.resources
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\obj\Debug\Exemplo00.csproj.GenerateResource.cache
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\obj\Debug\Exemplo00.csproj.CoreCompileInputs.cache
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\obj\Debug\Exemplo00.exe
+T:\Documentos\GitHub\C-Sharpe---Entra21---Exemplo---Banco-de-Dados\ExemploBD\Exemplo00\obj\Debug\Exemplo00.pdb
